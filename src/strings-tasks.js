@@ -19,8 +19,11 @@
  *   getStringLength(null) => 0
  *   getStringLength(undefined) => 0
  */
-function getStringLength(/* value */) {
-  throw new Error('Not implemented');
+function getStringLength(value) {
+  if (value) {
+    return value.length;
+  }
+  return 0;
 }
 
 /**
@@ -37,9 +40,7 @@ function getStringLength(/* value */) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(/* value */) {
-  throw new Error('Not implemented');
-}
+function isString(/* value */) {}
 
 /**
  * Returns the result of concatenation of two strings.
