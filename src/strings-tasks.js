@@ -40,7 +40,12 @@ function getStringLength(value) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(/* value */) {}
+function isString(value) {
+  if (typeof value === `string` || value instanceof String) {
+    return true;
+  }
+  return false;
+}
 
 /**
  * Returns the result of concatenation of two strings.
