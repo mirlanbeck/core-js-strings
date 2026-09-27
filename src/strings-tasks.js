@@ -273,8 +273,8 @@ function formatTime(minutes, seconds) {
  *   reverseString('abcdef') => 'fedcba'
  *   reverseString('12345') => '54321'
  */
-function reverseString(/* str */) {
-  throw new Error('Not implemented');
+function reverseString(str) {
+  return [...str].toReversed().join('');
 }
 
 /**
@@ -385,8 +385,12 @@ function findLongestWord(sentence) {
  *   reverseWords('Hello World') => 'olleH dlroW'
  *   reverseWords('The Quick Brown Fox') => 'ehT kciuQ nworB xoF'
  */
-function reverseWords(/* str */) {
-  throw new Error('Not implemented');
+function reverseWords(str) {
+  const reversedWord = str
+    .split(' ')
+    .map((word) => [...word].toReversed().join(''));
+  const joinedWord = reversedWord.join(' ');
+  return joinedWord;
 }
 
 /**
@@ -400,8 +404,20 @@ function reverseWords(/* str */) {
  *   invertCase('JavaScript is Fun') => 'jAVAsCRIPT IS fUN'
  *   invertCase('12345') => '12345'
  */
-function invertCase(/* str */) {
-  throw new Error('Not implemented');
+function invertCase(str) {
+  const arr = [...str];
+  const result = arr
+    .map((char) => {
+      if (char === char.toUpperCase()) {
+        return char.toLowerCase();
+      }
+      if (char === char.toLowerCase()) {
+        return char.toUpperCase();
+      }
+      return char;
+    })
+    .join('');
+  return result;
 }
 
 /**
